@@ -9,12 +9,11 @@
     var GetBookResource = require('../../resources/GetBookResource');
     var GetBooksResource = require('../../resources/GetBooksResource');
     var RemoveBookResource = require('../../resources/RemoveBookResource');
-
+    var LocalLibrary = require('../../dao/LocalLibrary');
 
 
     router.get('/', function (req, res) {
         res.type('json');
-
         GetBooksResource(function (data) {
             res.send(data);
         });
@@ -51,6 +50,8 @@
                 res.send("{}");
             });
         });
+
+        
 
     module.exports = router;
 }());
